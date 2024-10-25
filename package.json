@@ -1,0 +1,15 @@
+{
+  "name": "paradise",
+  "version": "1.0.0",
+  "description": "<a href=\"#\"><img src=\".github/assets/paradise.png\" alt=\"Paradise Station\"></a>",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
