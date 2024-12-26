@@ -252,6 +252,15 @@
 	muzzle_flash_range = MUZZLE_FLASH_RANGE_NORMAL
 	muzzle_flash_color = LIGHT_COLOR_LIGHTBLUE
 
+/obj/item/ammo_casing/shotgun/laserslug
+	name = "laser slug"
+	desc = "A rudimentary 12 gauge shotgun shell that replicates the effects of a laser weapon with a low-powered laser."
+	icon_state = "improvshell"
+	projectile_type = /obj/item/projectile/beam/laser
+	muzzle_flash_strength = MUZZLE_FLASH_STRENGTH_NORMAL
+	muzzle_flash_range = MUZZLE_FLASH_RANGE_NORMAL
+	muzzle_flash_color = LIGHT_COLOR_DARKRED
+
 /obj/item/ammo_casing/shotgun/lasershot
 	name = "lasershot"
 	desc = "An advanced 12 gauge shell that uses a multitude of lenses to split a high-powered laser into eight small beams."
@@ -282,7 +291,7 @@
 	..()
 	create_reagents(30)
 
-/obj/item/ammo_casing/shotgun/dart/attackby()
+/obj/item/ammo_casing/shotgun/dart/attackby__legacy__attackchain()
 	return
 
 /obj/item/ammo_casing/shotgun/dart/bioterror
@@ -319,6 +328,12 @@
 	desc = "A 12 gauge shell loaded with... confetti?"
 	icon_state = "partyshell"
 	projectile_type = /obj/item/projectile/bullet/confetti
+
+/obj/item/ammo_casing/shotgun/shrapnel
+	name = "shrapnel rounds"
+	projectile_type = /obj/item/projectile/bullet/shrapnel
+	pellets = 3
+	variance = 20
 
 /obj/item/ammo_casing/a556
 	name = "5.56mm round"
@@ -405,7 +420,7 @@
 		if(BB)
 			BB.icon_state = initial(BB.icon_state)
 
-/obj/item/ammo_casing/caseless/foam_dart/attackby(obj/item/A, mob/user, params)
+/obj/item/ammo_casing/caseless/foam_dart/attackby__legacy__attackchain(obj/item/A, mob/user, params)
 	..()
 	var/obj/item/projectile/bullet/reusable/foam_dart/FD = BB
 	if((is_pen(A)) && modified && !FD.pen)
@@ -434,7 +449,7 @@
 	FD.damage = 5
 	FD.nodamage = FALSE
 
-/obj/item/ammo_casing/caseless/foam_dart/attack_self(mob/living/user)
+/obj/item/ammo_casing/caseless/foam_dart/attack_self__legacy__attackchain(mob/living/user)
 	var/obj/item/projectile/bullet/reusable/foam_dart/FD = BB
 	if(FD.pen)
 		FD.damage = initial(FD.damage)

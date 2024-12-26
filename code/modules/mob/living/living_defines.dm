@@ -97,7 +97,7 @@
 
 	var/datum/language/default_language
 
-	var/datum/middleClickOverride/middleClickOverride = null
+	var/datum/middle_click_override/middleClickOverride = null
 
 	/// Famous last words -- if succumbing, what the user's last words were
 	var/last_words
@@ -115,3 +115,5 @@
 	var/last_taste_time
 	/// Stores a var of the last tast message we got. used so we don't spam people messages while they eat
 	var/last_taste_text
+	///If a creature gets to be super special and have extra range on their chat messages
+	var/extra_message_range = 0
