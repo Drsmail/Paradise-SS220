@@ -410,48 +410,47 @@
 		images[1].icon_state = "alienh_pounce"
 
 /obj/effect/hallucination/blob
-	duration = 30 SECONDS
+	duration = 32 SECONDS
 	/// The blob zombie hallucination.
-	var/obj/effect/hallucination/chaser/attacker/blob_zombie/zombie = null
+	var/obj/effect/hallucination/chaser/attacker/blob_zombie/zombie
 	/// The self delusion blob zombie hallucination, triggers on knockdown.
-	var/obj/effect/hallucination/blob_zombify/player_zombie = null
-	/// List of turfs that need expanding from.
-	var/list/turf/expand_queue = list()
-	/// Associative list of turfs that have already been processed.
-	var/list/turf/processed = list()
+	var/obj/effect/hallucination/blob_zombify/player_zombie
+	/// [[],[] ...], [] with turfs for each cycle
+	var/list/expand_queue
+	/// Current blob cycle
+	var/current_cycle = 0
 	/// The image for the chaser zombie's blob head
-	var/image/chaser_blob_head = null
+	var/image/chaser_blob_head
 	/// The image for the player zombie's blob head
-	var/image/target_blob_head = null
-	/// The delay at which the blob expands in deciseconds. Shouldn't be too low to prevent lag.
-	var/expand_delay = 7.5 SECONDS // Expand 6 times
+	var/image/target_blob_head
+	/// How many expansion cycles we would like to have. Shouldn't be too high to prevent lag.
+	var/expansion_tries = 4
 	/// Expand timer handle.
-	var/expand_timer = null
+	var/expand_timer
 
 /obj/effect/hallucination/blob/Initialize(mapload, mob/living/carbon/target)
 	. = ..()
-	var/list/locs = list()
+	var/list/candidate_locs = list()
 	for(var/turf/T in oview(world.view / 2, target))
-		var/light_amount = min(1, T.get_lumcount()) - 0.5
-		if(!is_blocked_turf(T) && light_amount <= 0)
-			locs += T
-	if(!length(locs))
+		var/light_amount = T.get_lumcount()
+		if(!is_blocked_turf(T) && light_amount <= 0.5)
+			candidate_locs += T
+	if(!length(candidate_locs))
 		qdel(src)
 		return
-	var/turf/T = get_turf(pick(locs))
-	color = pick(	COLOR_BLACK, COLOR_RIPPING_TENDRILS, COLOR_BOILING_OIL, COLOR_ENVENOMED_FILAMENTS, COLOR_LEXORIN_JELLY,
-								COLOR_KINETIC_GELATIN, COLOR_CRYOGENIC_LIQUID, COLOR_SORIUM, COLOR_TESLIUM_PASTE )
+	var/turf/T = get_turf(pick(candidate_locs))
+	color = pick(COLOR_BLACK, COLOR_RIPPING_TENDRILS, COLOR_BOILING_OIL, COLOR_ENVENOMED_FILAMENTS,\
+		COLOR_LEXORIN_JELLY, COLOR_KINETIC_GELATIN, COLOR_CRYOGENIC_LIQUID, COLOR_SORIUM, COLOR_TESLIUM_PASTE\
+	)
 	create_blob(T, core = TRUE)
 	target.playsound_local(T, 'sound/effects/splat.ogg', 50, 1)
 	create_zombie(T)
-	expand_queue += T
-	processed[T] = TRUE
+	var/expand_delay = (duration - 2 SECONDS) / expansion_tries // 7.5 SECONDS for 4 cycles
 	expand_timer = addtimer(CALLBACK(src, PROC_REF(expand)), expand_delay, TIMER_LOOP | TIMER_STOPPABLE)
 
 /obj/effect/hallucination/blob/Destroy()
 	deltimer(expand_timer)
 	QDEL_NULL(expand_queue)
-	QDEL_NULL(processed)
 	QDEL_NULL(zombie)
 	QDEL_NULL(player_zombie)
 	target.client.images -= chaser_blob_head
@@ -464,29 +463,36 @@
   * Called regularly in a timer to process the blob expanding.
   */
 /obj/effect/hallucination/blob/proc/expand()
-	// Brace for potentially expensive proc
-	for(var/t in expand_queue)
-		var/turf/source_turf = t
-		expand_queue -= source_turf
-		//Expand to each dir
-		for(var/direction in GLOB.cardinal)
-			var/turf/target_turf = get_step(source_turf, direction)
-			if(processed[target_turf] || !source_turf.CanAtmosPass(direction) || !target_turf.CanAtmosPass(turn(direction, 180)))
-				continue
-			create_blob(target_turf)
-			expand_queue += target_turf
-			processed[target_turf] = TRUE
+	// Brace for unexpensive proc :)
+	current_cycle = current_cycle + 1
+	for (var/turf/target_turf in expand_queue[current_cycle])
+		if(target_turf.blocks_air) // is_blocked_turf
+			continue
+		create_blob(target_turf)
+	QDEL_NULL(expand_queue[current_cycle])
 
 /**
   * Creates a fake blob overlay on the given turf.
   *
   * Arguments:
   * * T - The turf to create a fake plasma overlay on.
+  * * core - Do calculations for blob on TRUE
   */
 /obj/effect/hallucination/blob/proc/create_blob(turf/T, core = FALSE)
 	var/blob_icon_state = "blob"
 	if(core)
 		blob_icon_state = "blob_core"
+
+		expand_queue = new/list(expansion_tries, 0)
+
+		// RANGE_TURFS(expansion_tries, T)
+		var/list/potential_blob_turfs = oview(expansion_tries, T)
+		for(var/turf/turf in potential_blob_turfs)
+			var/reach_on_cycle = abs(turf.x - T.x) + abs(turf.y - T.y)
+			if(reach_on_cycle <= expansion_tries)
+				var/list/sycle_list = expand_queue[reach_on_cycle]
+				sycle_list.Add(turf)
+
 	var/image/I = image('icons/mob/blob.dmi', T, blob_icon_state, layer = FLY_LAYER)
 	I.plane = GAME_PLANE
 	I.color = color
