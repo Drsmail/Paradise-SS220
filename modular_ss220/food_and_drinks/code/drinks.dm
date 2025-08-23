@@ -1166,6 +1166,17 @@
 	list_reagents = list("moonlit" = 50)
 	broken_bottle_icon = 'modular_ss220/food_and_drinks/icons/drinks.dmi'
 
+/datum/reagent/consumable/ethanol/moonlit
+	name = "Moonlit"
+	id = "moonlit"
+	description = "" // Карма, заполни пж
+	color = "#664300" // rgb: 102, 67, 0
+	alcohol_perc = 0.4
+	drink_icon = "ginvodkaglass" // Карма, заполни пж новый спрайт
+	drink_name = "Glass of vodka" // Карма, заполни пж
+	drink_desc = "The glass contain wodka. Xynta." // Карма, заполни пж
+	taste_description = "vodka" // Карма, заполни пж
+
 /obj/item/reagent_containers/drinks/bottle/coral
 	name = "Kae'xer Coral Spirits"
 	desc = "Премиальный, популярный напиток Кверр'балакка. На этикетке - Один глоток — для размышлений, два — для единения, три — для звёзд."
@@ -1176,30 +1187,41 @@
 	list_reagents = list("coral" = 50)
 	broken_bottle_icon = 'modular_ss220/food_and_drinks/icons/drinks.dmi'
 
+/datum/reagent/consumable/ethanol/coral
+	name = "Сoral"
+	id = "coral"
+	description = "Number one drink AND fueling choice for Russians worldwide." // Карма, заполни пж
+	color = "#664300" // rgb: 102, 67, 0
+	alcohol_perc = 0.4
+	drink_icon = "ginvodkaglass"  // Карма, заполни пж, новый спрайт
+	drink_name = "Glass of vodka" // Карма, заполни пж
+	drink_desc = "The glass contain wodka. Xynta." // Карма, заполни пж
+	taste_description = "vodka" // Карма, заполни пж
+
 /obj/item/reagent_containers/drinks/bottle/bitter
 	name = "bitter"
-	desc = ""
+	desc = "Крепкий алкогольный напиток, отличающийся горьким вксом."
 	icon_state = "bitterbottle"
 	volume = 50
 	list_reagents = list("bitter" = 50)
 
 /obj/item/reagent_containers/drinks/bottle/bluecuracao
-	name = ""
-	desc = ""
+	name = "bluecuracao"
+	desc = "Ярко-синий апельсиновый ликер с насыщенным вкусом. "
 	icon_state = "bluecuracao"
 	volume = 50
 	list_reagents = list("bluecuracao" = 50)
 
 /obj/item/reagent_containers/drinks/bottle/sambuka
-	name = ""
-	desc = ""
+	name = "sambuka"
+	desc = "Крепкий, сладкий ликер с выраженным анисовым вкусом."
 	icon_state = "sambukabottle"
 	volume = 50
 	list_reagents = list("sambuka" = 50)
 
 /obj/item/reagent_containers/drinks/bottle/jagermeister
-	name = ""
-	desc = ""
+	name = "jagermeister"
+	desc = "Крепкий ликер, настоянный на травах. Отличная основа для коктейлей."
 	icon_state = "jagermeisterbottle"
 	volume = 50
 	list_reagents = list("jagermeister" = 50)
