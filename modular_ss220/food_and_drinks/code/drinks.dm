@@ -1155,18 +1155,61 @@
 	result_amount = 5
 	mix_sound = 'sound/goonstation/misc/drinkfizz.ogg'
 
-/obj/item/reagent_containers/drinks/bottle/coral
-	name = "Kae'xer Coral Spirits"
-	desc = "Премиальный, популярный напиток Кверр'балакка. На этикетке - Один глоток — для размышлений, два — для единения, три — для звёзд."
-	icon_state = "coral"
-	list_reagents = list("Kae'xer Coral Spirits" = 100)
-
 /obj/item/reagent_containers/drinks/bottle/moonlit
 	name = "Qerr'qux Moonlit Still"
 	desc = "Роскошная упаковка сока с Кверр'балакка, представляющая собой произведение искусства, достойное высших кругов."
+	icon = 'modular_ss220/food_and_drinks/icons/drinks.dmi'
 	icon_state = "moonlit"
-	list_reagents = list("Qerr'qux Moonlit Still" = 100)
+	item_state = "carton"
+	is_glass = FALSE
+	gender = PLURAL
+	list_reagents = list("moonlit" = 50)
+	broken_bottle_icon = 'modular_ss220/food_and_drinks/icons/drinks.dmi'
+
+/obj/item/reagent_containers/drinks/bottle/coral
+	name = "Kae'xer Coral Spirits"
+	desc = "Премиальный, популярный напиток Кверр'балакка. На этикетке - Один глоток — для размышлений, два — для единения, три — для звёзд."
+	icon = 'modular_ss220/food_and_drinks/icons/drinks.dmi'
+	icon_state = "coral"
+	is_glass = FALSE
+	gender = PLURAL
+	list_reagents = list("coral" = 50)
+	broken_bottle_icon = 'modular_ss220/food_and_drinks/icons/drinks.dmi'
+
+/obj/item/reagent_containers/drinks/bottle/bitter
+	name = "bitter"
+	desc = ""
+	icon_state = "bitterbottle"
+	volume = 50
+	list_reagents = list("bitter" = 50)
+
+/obj/item/reagent_containers/drinks/bottle/bluecuracao
+	name = ""
+	desc = ""
+	icon_state = "bluecuracao"
+	volume = 50
+	list_reagents = list("bluecuracao" = 50)
+
+/obj/item/reagent_containers/drinks/bottle/sambuka
+	name = ""
+	desc = ""
+	icon_state = "sambukabottle"
+	volume = 50
+	list_reagents = list("sambuka" = 50)
+
+/obj/item/reagent_containers/drinks/bottle/jagermeister
+	name = ""
+	desc = ""
+	icon_state = "jagermeisterbottle"
+	volume = 50
+	list_reagents = list("jagermeister" = 50)
 
 /obj/machinery/economy/vending/boozeomat/Initialize(mapload)
 	products += list(/obj/item/reagent_containers/drinks/bottle/carrotjuice = 2)
+	products += list(/obj/item/reagent_containers/drinks/bottle/moonlit = 2)
+	products += list(/obj/item/reagent_containers/drinks/bottle/coral = 2)
+	products += list(/obj/item/reagent_containers/drinks/bottle/bitter = 2)
+	products += list(/obj/item/reagent_containers/drinks/bottle/bluecuracao = 2)
+	products += list(/obj/item/reagent_containers/drinks/bottle/sambuka = 2)
+	products += list(/obj/item/reagent_containers/drinks/bottle/jagermeister = 2)
 	return ..()
