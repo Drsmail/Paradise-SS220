@@ -1035,6 +1035,126 @@
 	list_reagents = list("carrotjuice" = 50)
 	broken_bottle_icon = 'modular_ss220/food_and_drinks/icons/drinks.dmi'
 
+/datum/reagent/consumable/ethanol/moonsong
+	name = "Moon Song"
+	id = "moonsong"
+	description = "Цветочный напиток с лёгкой кислинкой."
+	color = "#476892ff"
+	alcohol_perc = 0.4
+	drinking_glass_icon = 'modular_ss220/food_and_drinks/icons/drinks.dmi'
+	drink_icon = "moonsong"
+	drink_name = "Moon Song"
+	drink_desc = "Этот коктейль является данью скреллианской поэзии и созерцательности."
+	taste_description = "Мягкий, цветочный вкус с лёгкой кислинкой и успокаивающим эффектом."
+
+/datum/chemical_reaction/moonsong
+	name = "Moon Song"
+	id = "moonsong"
+	result = "moonsong"
+	required_reagents = list("water" = 1, "milk" = 2)
+	result_amount = 5
+	mix_sound = 'sound/goonstation/misc/drinkfizz.ogg'
+
+/datum/reagent/consumable/ethanol/starpact
+	name = "Star Pact"
+	id = "starpact"
+	description = "Сладкий, фруктовый напиток."
+	color = "#653b7eff"
+	alcohol_perc = 0.4
+	drinking_glass_icon = 'modular_ss220/food_and_drinks/icons/drinks.dmi'
+	drink_icon = "starpact"
+	drink_name = "Star Pact"
+	drink_desc = "Этот коктейль создан для дипломатов и лидеров, которым нужна харизма и ясность ума."
+	taste_description = "Сладкий привкус, с пряными и фруктовыми нотами."
+
+/datum/chemical_reaction/starpact
+	name = "Star Pact"
+	id = "starpact"
+	result = "starpact"
+	required_reagents = list("tonic" = 1, "milk" = 2)
+	result_amount = 5
+	mix_sound = 'sound/goonstation/misc/drinkfizz.ogg'
+
+/datum/reagent/consumable/ethanol/qerrsunrise
+	name = "Qerr'balakk Sunrise"
+	id = "qerrsunrise"
+	description = "Освежающий коктейль, дарующий мягкий энергетический заряд для начала работы."
+	color = "#6bdfe7ff"
+	alcohol_perc = 0.4
+	drinking_glass_icon = 'modular_ss220/food_and_drinks/icons/drinks.dmi'
+	drink_icon = "qerrsunrise"
+	drink_name = "Qerr'balakk Sunrise"
+	drink_desc = "Этот коктейль вдохновлен утренними туманами Кверр'балакка."
+	taste_description = "Освежающий вкус, с цитрусовыми и травяными нотами, легкой сладостью и тонкой горчинкой."
+
+/datum/chemical_reaction/qerrsunrise
+	name = "Qerr'balakk Sunrise"
+	id = "qerrsunrise"
+	result = "qerrsunrise"
+	required_reagents = list("vodka" = 1, "milk" = 2)
+	result_amount = 5
+	mix_sound = 'sound/goonstation/misc/drinkfizz.ogg'
+
+/datum/reagent/consumable/ethanol/quemquem
+	name = "Quem'Quem Nectar"
+	id = "quemquem"
+	description = "Коктейль вдохновленный препаратом Квем-Квем - седативным и антистрессовым средоством."
+	color = "#2f572fff"
+	alcohol_perc = 0.4
+	drinking_glass_icon = 'modular_ss220/food_and_drinks/icons/drinks.dmi'
+	drink_icon = "quemquem"
+	drink_name = "Quem'Quem Nectar"
+	drink_desc = "Коктейль разработан для успокоения нервов и повышения концентрации, что идеально подходит для работы в условиях высокого стресса."
+	taste_description = "Мягкий, травяной вкус с легкой сладостью."
+
+/datum/chemical_reaction/quemtarr
+	name = "Quem'Quem Nectar"
+	id = "quemquem"
+	result = "quemquem"
+	required_reagents = list("beer" = 1, "milk" = 2)
+	result_amount = 5
+	mix_sound = 'sound/goonstation/misc/drinkfizz.ogg'
+
+/datum/reagent/consumable/ethanol/qermalpulse
+	name = "Qerr'Malik Pulse"
+	id = "qermalpulse"
+	description = "Яркий напиток в низком стакане с голографическим узором в виде пульса и тематической трубкой."
+	color = "#5e1818ff"
+	alcohol_perc = 0.4
+	drinking_glass_icon = 'modular_ss220/food_and_drinks/icons/drinks.dmi'
+	drink_icon = "qermalpulse"
+	drink_name = "Qerr'Malik Pulse"
+	drink_desc = "Коктейль, названный в честь луны Кверр'балакка, он - дань космической экспансии Скреллов."
+	taste_description = "Терпкий, землистый вкус с нотками экзотических растений и мощным расслабляющим эффектом."
+
+/datum/chemical_reaction/qermalpulse
+	name = "Qerr'Malik Pulse"
+	id = "qermalpulse"
+	result = "qermalpulse"
+	required_reagents = list("vodka" = 2, "milk" = 2)
+	result_amount = 5
+	mix_sound = 'sound/goonstation/misc/drinkfizz.ogg'
+
+/datum/reagent/consumable/ethanol/quemtarimpulse
+	name = "Quem'Tarr Impulse"
+	id = "quemtarimpulse"
+	description = "Яркий напиток в низком стакане с голографическим узором в виде пульса и тематической трубкой."
+	color = "#db9d2aff"
+	alcohol_perc = 0.4
+	drinking_glass_icon = 'modular_ss220/food_and_drinks/icons/drinks.dmi'
+	drink_icon = "quemtarimpulse"
+	drink_name = "Quem'Tarr Impulse"
+	drink_desc = "Коктейль, созданный для ученых и инженеров, которым нужна энергия для работы."
+	taste_description = "Резкий, фруктово-кислый вкус с легкой горчинкой, стимулирующий мозговую активность."
+
+/datum/chemical_reaction/quemtarimpulse
+	name = "Quem'Tarr Impulse"
+	id = "quemtarimpulse"
+	result = "quemtarimpulse"
+	required_reagents = list("vodka" = 3, "milk" = 2)
+	result_amount = 5
+	mix_sound = 'sound/goonstation/misc/drinkfizz.ogg'
+
 /obj/machinery/economy/vending/boozeomat/Initialize(mapload)
 	products += list(/obj/item/reagent_containers/drinks/bottle/carrotjuice = 2)
 	return ..()
