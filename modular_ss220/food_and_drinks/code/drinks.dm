@@ -1040,18 +1040,18 @@
 	id = "moonsong"
 	description = "Цветочный напиток с лёгкой кислинкой."
 	color = "#476892ff"
-	alcohol_perc = 0.4
+	alcohol_perc = 0.2
 	drinking_glass_icon = 'modular_ss220/food_and_drinks/icons/drinks.dmi'
 	drink_icon = "moonsong"
 	drink_name = "Moon Song"
 	drink_desc = "Этот коктейль является данью скреллианской поэзии и созерцательности."
-	taste_description = "Мягкий, цветочный вкус с лёгкой кислинкой и успокаивающим эффектом."
+	taste_description = "Мягкий, цветочный вкус с лёгкой кислинкой и успокаивающим эффектом"
 
 /datum/chemical_reaction/moonsong
 	name = "Moon Song"
 	id = "moonsong"
 	result = "moonsong"
-	required_reagents = list("water" = 1, "milk" = 2)
+	required_reagents = list("coral" = 1, "moonlit" = 1, "gin" = 2, "bluecuracao" = 1)
 	result_amount = 5
 	mix_sound = 'sound/goonstation/misc/drinkfizz.ogg'
 
@@ -1060,18 +1060,18 @@
 	id = "starpact"
 	description = "Сладкий, фруктовый напиток."
 	color = "#653b7eff"
-	alcohol_perc = 0.4
+	alcohol_perc = 0.3
 	drinking_glass_icon = 'modular_ss220/food_and_drinks/icons/drinks.dmi'
 	drink_icon = "starpact"
 	drink_name = "Star Pact"
 	drink_desc = "Этот коктейль создан для дипломатов и лидеров, которым нужна харизма и ясность ума."
-	taste_description = "Сладкий привкус, с пряными и фруктовыми нотами."
+	taste_description = "Сладкий привкус, с пряными и фруктовыми нотами"
 
 /datum/chemical_reaction/starpact
 	name = "Star Pact"
 	id = "starpact"
 	result = "starpact"
-	required_reagents = list("tonic" = 1, "milk" = 2)
+	required_reagents = list("tonic" = 1, "berryjuice" = 2, "coral" = 1, "moonlit" = 1)
 	result_amount = 5
 	mix_sound = 'sound/goonstation/misc/drinkfizz.ogg'
 
@@ -1080,38 +1080,38 @@
 	id = "qerrsunrise"
 	description = "Освежающий коктейль, дарующий мягкий энергетический заряд для начала работы."
 	color = "#6bdfe7ff"
-	alcohol_perc = 0.4
+	alcohol_perc = 0.6
 	drinking_glass_icon = 'modular_ss220/food_and_drinks/icons/drinks.dmi'
 	drink_icon = "qerrsunrise"
 	drink_name = "Qerr'balakk Sunrise"
 	drink_desc = "Этот коктейль вдохновлен утренними туманами Кверр'балакка."
-	taste_description = "Освежающий вкус, с цитрусовыми и травяными нотами, легкой сладостью и тонкой горчинкой."
+	taste_description = "Освежающий вкус, с цитрусовыми и травяными нотами, легкой сладостью и тонкой горчинкой"
 
 /datum/chemical_reaction/qerrsunrise
 	name = "Qerr'balakk Sunrise"
 	id = "qerrsunrise"
 	result = "qerrsunrise"
-	required_reagents = list("vodka" = 1, "milk" = 2)
+	required_reagents = list("bluecuracao" = 1, "tonic" = 1, "coral" = 1, "moonlit" = 1, "limejuice" = 1)
 	result_amount = 5
 	mix_sound = 'sound/goonstation/misc/drinkfizz.ogg'
 
-/datum/reagent/consumable/ethanol/quemquem
-	name = "Quem'Quem Nectar"
+/datum/reagent/consumable/ethanol/qerrquem
+	name = "Qerr'Quem Nectar"
 	id = "quemquem"
-	description = "Коктейль вдохновленный препаратом Квем-Квем - седативным и антистрессовым средоством."
+	description = "Коктейль вдохновленный препаратом Кверр-Квем - седативным и антистрессовым средоством."
 	color = "#2f572fff"
-	alcohol_perc = 0.4
+	alcohol_perc = 0.35
 	drinking_glass_icon = 'modular_ss220/food_and_drinks/icons/drinks.dmi'
-	drink_icon = "quemquem"
-	drink_name = "Quem'Quem Nectar"
+	drink_icon = "qerrquem"
+	drink_name = "Qerr'Quem Nectar"
 	drink_desc = "Коктейль разработан для успокоения нервов и повышения концентрации, что идеально подходит для работы в условиях высокого стресса."
-	taste_description = "Мягкий, травяной вкус с легкой сладостью."
+	taste_description = "Мягкий, травяной вкус с легкой сладостью"
 
-/datum/chemical_reaction/quemtarr
-	name = "Quem'Quem Nectar"
-	id = "quemquem"
-	result = "quemquem"
-	required_reagents = list("beer" = 1, "milk" = 2)
+/datum/chemical_reaction/qerrquem
+	name = "Qerr'Quem Nectar"
+	id = "qerrquem"
+	result = "qerrquem"
+	required_reagents = list("berryjuice" = 1, "coral" = 2, "moonlit" = 1, "gin" = 1)
 	result_amount = 5
 	mix_sound = 'sound/goonstation/misc/drinkfizz.ogg'
 
@@ -1120,18 +1120,18 @@
 	id = "qermalpulse"
 	description = "Яркий напиток в низком стакане с голографическим узором в виде пульса и тематической трубкой."
 	color = "#5e1818ff"
-	alcohol_perc = 0.4
+	alcohol_perc = 0.7
 	drinking_glass_icon = 'modular_ss220/food_and_drinks/icons/drinks.dmi'
 	drink_icon = "qermalpulse"
 	drink_name = "Qerr'Malik Pulse"
 	drink_desc = "Коктейль, названный в честь луны Кверр'балакка, он - дань космической экспансии Скреллов."
-	taste_description = "Терпкий, землистый вкус с нотками экзотических растений и мощным расслабляющим эффектом."
+	taste_description = "Терпкий, землистый вкус с нотками экзотических растений и мощным расслабляющим эффектом"
 
 /datum/chemical_reaction/qermalpulse
 	name = "Qerr'Malik Pulse"
 	id = "qermalpulse"
 	result = "qermalpulse"
-	required_reagents = list("vodka" = 2, "milk" = 2)
+	required_reagents = list("coral" = 1, "moonlit" = 1, "gin" = 1, "vodka" = 1, "tequila" = 1)
 	result_amount = 5
 	mix_sound = 'sound/goonstation/misc/drinkfizz.ogg'
 
@@ -1140,20 +1140,32 @@
 	id = "quemtarimpulse"
 	description = "Яркий напиток в низком стакане с голографическим узором в виде пульса и тематической трубкой."
 	color = "#db9d2aff"
-	alcohol_perc = 0.4
+	alcohol_perc = 0.55
 	drinking_glass_icon = 'modular_ss220/food_and_drinks/icons/drinks.dmi'
 	drink_icon = "quemtarimpulse"
 	drink_name = "Quem'Tarr Impulse"
 	drink_desc = "Коктейль, созданный для ученых и инженеров, которым нужна энергия для работы."
-	taste_description = "Резкий, фруктово-кислый вкус с легкой горчинкой, стимулирующий мозговую активность."
+	taste_description = "Резкий, фруктово-кислый вкус с легкой горчинкой, стимулирующий мозговую активность"
 
 /datum/chemical_reaction/quemtarimpulse
 	name = "Quem'Tarr Impulse"
 	id = "quemtarimpulse"
 	result = "quemtarimpulse"
-	required_reagents = list("vodka" = 3, "milk" = 2)
+	required_reagents = list("vodka" = 1, "limejuice" = 1, "orangejuice" = 1, "moonlit" = 1, "coral" = 1)
 	result_amount = 5
 	mix_sound = 'sound/goonstation/misc/drinkfizz.ogg'
+
+/obj/item/reagent_containers/drinks/bottle/coral
+	name = "Kae'xer Coral Spirits"
+	desc = "Премиальный, популярный напиток Кверр'балакка. На этикетке - Один глоток — для размышлений, два — для единения, три — для звёзд."
+	icon_state = "coral"
+	list_reagents = list("Kae'xer Coral Spirits" = 100)
+
+/obj/item/reagent_containers/drinks/bottle/moonlit
+	name = "Qerr'qux Moonlit Still"
+	desc = "Роскошная упаковка сока с Кверр'балакка, представляющая собой произведение искусства, достойное высших кругов."
+	icon_state = "moonlit"
+	list_reagents = list("Qerr'qux Moonlit Still" = 100)
 
 /obj/machinery/economy/vending/boozeomat/Initialize(mapload)
 	products += list(/obj/item/reagent_containers/drinks/bottle/carrotjuice = 2)
