@@ -1169,13 +1169,13 @@
 /datum/reagent/consumable/ethanol/moonlit
 	name = "Moonlit"
 	id = "moonlit"
-	description = "" // Карма, заполни пж
-	color = "#664300" // rgb: 102, 67, 0
+	description = "Легкий, почти искристый сок, похожий на спелые ягоды."
+	color = "#542e6d"
 	alcohol_perc = 0.4
-	drink_icon = "ginvodkaglass" // Карма, заполни пж новый спрайт
-	drink_name = "Glass of vodka" // Карма, заполни пж
-	drink_desc = "The glass contain wodka. Xynta." // Карма, заполни пж
-	taste_description = "vodka" // Карма, заполни пж
+	drink_icon = "moonlitglass"
+	drink_name = "Glass of Qerr'qux Moonlit Still"
+	drink_desc = "Граненый стакан содержит яркий, фиолетовый сок и трубочку."
+	taste_description = "Глубокий, слегка цветочный привкус, с тонкую минеральной ноткой"
 
 /obj/item/reagent_containers/drinks/bottle/coral
 	name = "Kae'xer Coral Spirits"
@@ -1190,13 +1190,13 @@
 /datum/reagent/consumable/ethanol/coral
 	name = "Сoral"
 	id = "coral"
-	description = "Number one drink AND fueling choice for Russians worldwide." // Карма, заполни пж
-	color = "#664300" // rgb: 102, 67, 0
-	alcohol_perc = 0.4
-	drink_icon = "ginvodkaglass"  // Карма, заполни пж, новый спрайт
-	drink_name = "Glass of vodka" // Карма, заполни пж
-	drink_desc = "The glass contain wodka. Xynta." // Карма, заполни пж
-	taste_description = "vodka" // Карма, заполни пж
+	description = "Легкая, искристая сладость с тонким фруктовым оттенком"
+	color = "#4fd6ff"
+	alcohol_perc = 0.3
+	drink_icon = "coralglass"
+	drink_name = "Glass of Kae'xer Coral Spirits"
+	drink_desc = "Хрустальный стакан содержит яркий, голубой напиток и две декоративные трубочки."
+	taste_description = "Глубокий и сложный, с мягкими цветочными и травяными нотами, а также легкой солоноватостью, напоминающей морскую воду"
 
 /obj/item/reagent_containers/drinks/bottle/bitter
 	name = "bitter"
