@@ -185,7 +185,7 @@ fluff_undershirts = [
 # Enable/disable the database on a whole
 sql_enabled = false
 # SQL version. If this is a mismatch, round start will be delayed
-sql_version = 722209
+sql_version = 7222010
 # SQL server address. Can be an IP or DNS name
 sql_address = "127.0.0.1"
 # SQL server port
@@ -1020,6 +1020,8 @@ secret_number = 42
 [ss220_misc_configuration]
 # This section contains everything that should be in general_configuration
 
+# URL for the loopback character portrait service. Do not use a trailing slash. Comment out to disable.
+#character_portrait_service_url = "http://127.0.0.1:8090"
 # Respawn delay in minutes before one may respawn as a crew member
 respawn_delay = 20
 # Players needed to enable advanced communication (common channel limitations).

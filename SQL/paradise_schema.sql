@@ -90,6 +90,23 @@ CREATE TABLE `characters` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Table structure for table `character_images`
+--
+
+DROP TABLE IF EXISTS `character_images`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `character_images` (
+  `uploader_ckey` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `filename` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` tinyint(3) UNSIGNED NOT NULL DEFAULT 0,
+  `reviewer_ckey` varchar(32) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`uploader_ckey`, `filename`),
+  KEY `idx_character_images_status` (`status`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
 -- Table structure for table `customuseritems`
 --
 

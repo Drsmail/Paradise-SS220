@@ -92,6 +92,7 @@ dmdoc/
 
 # don't share our secrets
 /secret
+/user_loaded_data
 
 # don't share database dumps from docker containers
 /paradise_db.sql

@@ -47,6 +47,14 @@
 		winset(viewer, "paramapwindow.status_bar", "is-visible=true;focus=true")
 
 /**
+ * Returns HTML buttons supplied by other lobby modules.
+ *
+ * Override this proc, call parent and append module-owned buttons to the result.
+ */
+/datum/title_screen/proc/get_additional_menu_buttons(client/viewer, mob/new_player/player)
+	return ""
+
+/**
  * Get the HTML of title screen.
  */
 /datum/title_screen/proc/get_title_html(client/viewer, mob/user)
@@ -96,6 +104,9 @@
 		<hr>
 		<a class="menu_button [viewer.persistent.skip_antag ? "bad" : "good"]" id="be_antag" href='byond://?src=[player.UID()];skip_antag=1'>[viewer.persistent.skip_antag ? "Антагонисты: Выкл." : "Антагонисты: Вкл."]</a>
 		<a class="menu_button" href='byond://?src=[player.UID()];char_preferences=1'>Настройка персонажа</a>
+	"}
+	html += get_additional_menu_buttons(viewer, player)
+	html += {"
 		<a class="menu_button" href='byond://?src=[player.UID()];game_preferences=1'>Настройки игры</a>
 		<hr>
 	"}

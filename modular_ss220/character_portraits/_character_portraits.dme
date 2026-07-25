@@ -1,0 +1,9 @@
+#include "_character_portraits.dm"
+
+#include "code\configuration.dm"
+#include "code\character_portrait_panel.dm"
+#include "code\character_portrait_manager.dm"
+#include "code\character_portrait_moderation.dm"
+#include "code\new_player.dm"
+#include "code\title_screen.dm"
+#include "code\admin.dm"
