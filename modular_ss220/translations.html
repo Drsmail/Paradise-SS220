@@ -1,0 +1,27 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><base href="../"><link rel="stylesheet" href="dmdoc.css"><title>modular_ss220/translations/README.md - Space Station 13</title></head><body><header><a href="index.html">Space Station 13</a> - <a href="index.html#modules">Modules</a> - <a href="index.html#types">Types</a></header><main><h1>modular_ss220/translations/README.md <a href="https://github.com/Drsmail/Paradise-SS220/blob/4d9c5d50b3708d06e0d6d24d38398f54a23d2b3e/modular_ss220/translations/README.md"><img src="git.png" width="16" height="16" title="modular_ss220/translations/README.md"></a></h1><table class="summary" cellspacing="0"><tr><td colspan="2"><h2 id="руководство-по-добавлению-перевода">Руководство по добавлению перевода</h2>
+<ol>
+<li>В директории <code>translations/public</code> создайте файл <strong><code>ru_names.toml</code></strong>.</li>
+<li>Заполните его переводом, используя следующий формат:</li>
+</ol>
+<pre><code class="language-toml">[&quot;air alarm&quot;]
+nominative = &quot;воздушная сигнализация&quot;
+genitive = &quot;воздушной сигнализации&quot;
+dative = &quot;воздушной сигнализации&quot;
+accusative = &quot;воздушную сигнализацию&quot;
+instrumental = &quot;воздушной сигнализацией&quot;
+prepositional = &quot;воздушной сигнализации&quot;
+gender = &quot;female&quot;
+</code></pre>
+<p>Обязательными элементами являются название, записанное в <code>[&quot;&quot;]</code>, которое должно полностью совпадать с названием из игры, а также поле <code>nominative</code>. Остальные поля заполнять необязательно. Если поле <code>gender</code> не указано, по умолчанию будет использоваться значение <code>male</code>.</p>
+<p>После добавления перевода в созданный файл запустите задачу <code>split translation</code>:</p>
+<ol>
+<li>Нажмите <code>Ctrl + Shift + P</code>.</li>
+<li>Выберите <code>Tasks: Run Task</code>.</li>
+<li>Выберите <code>split translation</code>.</li>
+</ol>
+<p>В директории <code>modular_ss220/translations/public/ru_names</code> должны появиться новые файлы. Их необходимо добавить в ваш PR.</p>
+<blockquote>
+<p>[!TIP]
+Добавление перевода в <code>.toml</code>-фрагменты относится исключительно к <code>/obj/item/...</code>.
+Не нужно добавлять перевод объектов, которые не относятся к игровым предметам.</p>
+</blockquote></td></tr></table></main><footer>paradise.dme <a href="https://github.com/Drsmail/Paradise-SS220/tree/4d9c5d50b3708d06e0d6d24d38398f54a23d2b3e">4d9c5d5</a> (master) — <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/crates/dmdoc/README.md">dmdoc 1.11.0</a></footer></body></html>
